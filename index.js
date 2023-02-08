@@ -9,18 +9,22 @@ function CalcularPromedio() {
     
         for (i=0; i< nnotas; i++){
             notas= parseInt(prompt(`digita la nota ` + i));
+            while(notas > 10){
+                alert("Coloque una nota del 1 al 10")
+                notas= parseInt(prompt(`digita la nota ` + i));
+            }
             suma = suma + notas;
         }
         promedio = suma / nnotas;
-        
     
-    if (promedio >= 7) {
-        alert(`el alumno ${nombre} esta aprobado con una nota de ${promedio}`);
+        if (promedio >= 7) {
+            alert(`el alumno ${nombre} esta aprobado con una nota de ${promedio}`);
+        }
+        else {
+            alert(`el alumno ${nombre} esta desaprobado con una nota de ${promedio}`);
+        }
+        nombre= prompt("Ingrese el nombre de otro alumno o escriba salir");
     }
-    else {
-        alert(`el alumno ${nombre} esta desaprobado con una nota de ${promedio}`);
-    }
-    nombre= prompt("Ingrese el nombre de otro alumno o escriba salir");
-}
 }
 CalcularPromedio()
+
